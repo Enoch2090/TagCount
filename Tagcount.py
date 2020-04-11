@@ -70,7 +70,6 @@ if __name__ == "__main__":
     if args.dir == None:
         print("Argument missing: directory")
     else:
-        cwd =
         file_list = scan(args.dir)
         tags = count(file_list)
         write_as_file(tags)
