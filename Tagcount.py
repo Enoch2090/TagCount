@@ -53,7 +53,7 @@ def scan(dirc, file_list=[]):
     return file_list
 
 
-def write_as_file(tag_base, dirc):
+def write_as_file(tag_base, dirc=os.getcwd()):
     with open(dirc+'/wordcloud.txt', 'w') as f:
         t = ''
         for tag, count in tag_base.items():
@@ -70,7 +70,7 @@ if __name__ == "__main__":
     if args.dir == None:
         print("Argument missing: directory")
     else:
-        cwd = os.getcwd()
+        cwd =
         file_list = scan(args.dir)
         tags = count(file_list)
-        write_as_file(tags, cwd)
+        write_as_file(tags)

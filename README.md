@@ -48,7 +48,7 @@ file_list = tgc.scan('Users/Blog/Source/_posts/')
 tags = tgc.count(file_list)
 tgc.write_as_file(tags, '/Users/enoch/Desktop')
 ```
-
+This will generate a `wordcloud.txt` in the specified directory by the second parameter of the `write_as_file()` function.
 Note that the `count()` function returns a dictionary with the keys as tags and values as occurances. Therefore you may utilize this function to directly get the count instead of writing to a wordcloud file.
 
 ## Generate a Word Cloud
