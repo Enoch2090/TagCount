@@ -35,10 +35,12 @@ def count(file_list):
                     tag_base[tag_cleared] = 1
         except:
             pass
+    print('Counted ' + str(len(file_list)) + ' files, ' +
+          str(len(tag_base)) + ' tags detected.')
     return tag_base
 
 
-def scan(dirc, file_list):
+def scan(dirc, file_list=[]):
     os.chdir(dirc)
     dir_list = os.listdir(dirc)
     for item in dir_list:
@@ -57,8 +59,8 @@ def write_as_file(tag_base, dirc):
         for tag, count in tag_base.items():
             for i in range(count):
                 t = t + ' ' + tag
-        print(t)
         f.write(t)
+        print('Write successfully to: ' + dirc + '/wordcloud.txt')
     return
 
 
@@ -69,7 +71,6 @@ if __name__ == "__main__":
         print("Argument missing: directory")
     else:
         cwd = os.getcwd()
-        file_list = []
-        file_list = scan(args.dir, file_list)
+        file_list = scan(args.dir)
         tags = count(file_list)
         write_as_file(tags, cwd)

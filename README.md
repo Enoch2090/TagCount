@@ -35,7 +35,7 @@ pip3 install -r requirements.txt
 There are two ways of using the snippet. The cli method:
 
 ```shell
-$ python3 Tagcount.py --dir 'Users/Blog/Source/_posts/'
+$ python3 tagcount.py --dir 'Users/Blog/Source/_posts/'
 ```
 
 This will generate a `wordcloud.txt` in the directory where you run the script.
@@ -44,8 +44,7 @@ The coding method:
 
 ```python
 import tagcount as tgc
-file_list = []
-file_list = tgc.scan('Users/Blog/Source/_posts/',file_list)
+file_list = tgc.scan('Users/Blog/Source/_posts/')
 tags = tgc.count(file_list)
 tgc.write_as_file(tags, '/Users/enoch/Desktop')
 ```
